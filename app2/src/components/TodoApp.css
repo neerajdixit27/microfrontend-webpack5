@@ -32,7 +32,7 @@
 
 .todo-is-completed .checkbox {
   color: #000;
-  background: #fff;
+  background: black;
 }
 
 .todo-is-completed input {
@@ -73,7 +73,7 @@ ul {
 input {
   border: none;
   background: transparent;
-  color: white;
+  color: black;
   font-size: 1.4rem;
   outline: none;
   width: 100%;
