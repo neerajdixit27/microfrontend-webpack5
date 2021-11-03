@@ -3,7 +3,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const deps = require('./package.json').dependencies;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],

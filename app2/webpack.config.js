@@ -4,7 +4,7 @@ const path = require('path');
 const deps = require('./package.json').dependencies;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   mode: 'development',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -23,16 +23,21 @@ module.exports = {
         loader: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test:/\.css$/,
+        use:['style-loader', 'css-loader']
+       
+      }
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'app2',
       library: { type: 'var', name: 'app2' },
-      filename: 'remoteEntry.js',
+      filename: 'app2.main.js',
       exposes: {
         // expose each component
-        './CounterAppTwo': './src/components/CounterAppTwo',
+        './TodoApp': './src/components/TodoApp',
       },
       shared: {
         ...deps,

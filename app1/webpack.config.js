@@ -4,7 +4,7 @@ const path = require('path');
 const deps = require('./package.json').dependencies;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   mode: 'development',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -29,7 +29,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app1',
       library: { type: 'var', name: 'app1' },
-      filename: 'remoteEntry.js',
+      filename: 'app1.main.js',
       exposes: {
         // expose each component
         './CounterAppOne': './src/components/CounterAppOne',
